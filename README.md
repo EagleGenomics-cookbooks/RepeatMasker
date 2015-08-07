@@ -26,6 +26,14 @@ Requirements
 
 Notes
 =====
+This program uses the Dfam database. By default is downloads the lastest version but if you want to overided that change the 
+default['RepeatMasker']['dfamUrl'] attribute, e.g. replace 
+
+`default['RepeatMasker']['dfamUrl'] = 'http://www.dfam.org/web_download/Release/Current_Release' + default['RepeatMasker']['filename']`
+
+with
+
+`default['RepeatMasker']['dfamUrl'] = 'http://www.dfam.org/web_download/Release/Dfam_1.4/' + default['RepeatMasker']['filename']`
 
 Usage
 =====
