@@ -1,0 +1,10 @@
+name 'RepeatMasker'
+maintainer 'The Authors'
+maintainer_email 'chef@eaglegenomics.com'
+license 'all_rights'
+description 'Installs/Configures RepeatMasker'
+long_description 'Installs/Configures RepeatMasker'
+version '0.1.0'
+
+depends 'build-essential'
+depends 'magic_shell'
