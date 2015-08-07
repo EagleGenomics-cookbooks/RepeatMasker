@@ -7,13 +7,17 @@
 
 include_recipe 'build-essential'
 include_recipe 'TRF'
-include_recipe 'HMMER'
+include_recipe 'RepeatMasker'
 
 ##########################################################
 # here for use by serverspec
 
-magic_shell_environment 'RepeatMasker_VERSION' do
+magic_shell_environment 'REPEATMASKER_VERSION' do
   value node['RepeatMasker']['version']
+end
+
+magic_shell_environment 'REPEATMASKER_DIR' do
+  value node['RepeatMasker']['dir']
 end
 
 ##########################################################
@@ -45,11 +49,19 @@ execute 'gunzip Dfam file' do
   command "gzip -dc #{Chef::Config[:file_cache_path]}/#{node['RepeatMasker']['dfamFilename']} > #{node['RepeatMasker']['dir']}/Libraries/Dfam.hmm"
 end
 
-#execute 'perl ./configure' do
-#  cwd "#{node['RepeatMasker']['dir']}"
-#end
+cookbook_file 'configureAnwsers.txt' do
+  path "#{Chef::Config[:file_cache_path]}/configureAnwsers.txt"
+  action :create
+end
 
+execute "perl ./configure < #{Chef::Config[:file_cache_path]}/configureAnwsers.txt" do
+  cwd node['RepeatMasker']['dir']
+end
 
+execute 'create symbolic links in PATH to executable' do
+  command "ln -s -f #{node['RepeatMasker']['dir']}/RepeatMasker ."
+  cwd node['RepeatMasker']['install_dir'] + '/bin'
+end
 
 ##########################################################
 ##########################################################
