@@ -7,7 +7,7 @@
 
 include_recipe 'build-essential'
 include_recipe 'TRF'
-include_recipe 'RepeatMasker'
+include_recipe 'HMMER'
 
 ##########################################################
 # here for use by serverspec
