@@ -1,3 +1,5 @@
+default['TRF']['version'] = '407b'
+default['HMMER']['version'] = '3.1b2'
 #################################################
 # http://www.repeatmasker.org/RepeatMasker-open-4-0-5.tar.gz
 default['RepeatMasker']['version'] = '4-0-5'
