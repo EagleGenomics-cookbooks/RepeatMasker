@@ -4,6 +4,13 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 ##########################################################
+# package install
+
+package ['zlib-devel', 'tar', 'make', 'unzip'] do
+  action :install
+end
+
+##########################################################
 
 include_recipe 'build-essential'
 include_recipe 'TRF'
@@ -18,13 +25,6 @@ end
 
 magic_shell_environment 'REPEATMASKER_DIR' do
   value node['RepeatMasker']['dir']
-end
-
-##########################################################
-# package install
-
-package ['zlib-devel'] do
-  action :install
 end
 
 ##########################################################
