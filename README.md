@@ -36,10 +36,10 @@ with
 `default['RepeatMasker']['dfamUrl'] = 'http://www.dfam.org/web_download/Release/Dfam_1.4/' + default['RepeatMasker']['filename']`
 
 The cookbook also depends on the TRF and HMMER cookbooks so defines its preferred versions 
-
-`default['TRF']['version'] = '407b'`
-`default['HMMER']['version'] = '3.1b2'`
-
+```
+default['TRF']['version'] = '407b'
+default['HMMER']['version'] = '3.1b2'
+```
 Usage
 =====
 Simply include the recipe wherever you would like it installed, such as a run list (recipe[RepeatMasker]) or a cookbook (include_recipe 'RepeatMasker')
