@@ -12,4 +12,3 @@ default['RepeatMasker']['dir'] = default['RepeatMasker']['install_dir'] + '/Repe
 # http://www.dfam.org/web_download/Release/Dfam_1.4/Dfam.hmm.gz
 default['RepeatMasker']['dfamFilename'] = 'Dfam.hmm.gz'
 default['RepeatMasker']['dfamUrl'] = 'http://www.dfam.org/web_download/Current_Release/' + default['RepeatMasker']['dfamFilename']
-# default['RepeatMasker']['dfamUrl'] = 'http://www.dfam.org/web_download/Release/Dfam_1.4/' + default['RepeatMasker']['filename']
