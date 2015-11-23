@@ -11,7 +11,7 @@ DNA sequences. The output of the program is a detailed annotation of the repeats
 in the query sequence as well as a modified version of the query sequence in which all the 
 annotated repeats have been masked (default: replaced by Ns). Currently over 56% of human genomic 
 sequence is identified and masked by the program. Sequence comparisons in RepeatMasker are 
-performed by one of several popular search engines including nhmmer, cross_match, ABBlast/WUBlast, 
+performed by one of several popular search engines including nhmmer (used in this cookbook), cross_match, ABBlast/WUBlast, 
 RMBlast and Decypher. RepeatMasker makes use of curated libraries of repeats and currently supports 
 Dfam ( profile HMM library derived from Repbase sequences ) and Repbase, a service of the 
 Genetic Information Research Institute.
@@ -22,11 +22,11 @@ Requirements
 ## Platform:
 
 * Centos 6.6
-* RHEL 6.6
 
 Notes
 =====
-This program uses the Dfam database. By default is downloads the lastest version but if you want to overided that change the 
+This program uses the Dfam database. By default it downloads the lastest version but if you want to override that change the following:
+
 default['RepeatMasker']['dfamUrl'] attribute, e.g. replace 
 
 `default['RepeatMasker']['dfamUrl'] = 'http://www.dfam.org/web_download/Release/Current_Release' + default['RepeatMasker']['filename']`
@@ -35,7 +35,7 @@ with
 
 `default['RepeatMasker']['dfamUrl'] = 'http://www.dfam.org/web_download/Release/Dfam_1.4/' + default['RepeatMasker']['filename']`
 
-The cookbook also depends on the TRF and HMMER cookbooks so defines its prefered versions 
+The cookbook also depends on the TRF and HMMER cookbooks so defines its preferred versions 
 
 `default['TRF']['version'] = '407b'
 default['HMMER']['version'] = '3.1b2'`
