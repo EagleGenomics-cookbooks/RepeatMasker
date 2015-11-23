@@ -38,6 +38,7 @@ with
 The cookbook also depends on the TRF and HMMER cookbooks so defines its preferred versions 
 
 `default['TRF']['version'] = '407b'
+
 default['HMMER']['version'] = '3.1b2'`
 
 Usage
