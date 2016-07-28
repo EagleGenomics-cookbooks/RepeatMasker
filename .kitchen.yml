@@ -8,8 +8,8 @@ provisioner:
 
 verifier:
   name: inspec
-  # sudo: false # if 'true' (default) inSpec will run tests as 'root', rather than 'kitchen'
   format: doc
+  sudo_command: '. /etc/profile;'
 
 platforms:
   - name: centos-6.6
