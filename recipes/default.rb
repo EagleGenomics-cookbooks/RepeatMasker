@@ -4,31 +4,14 @@
 #
 # Copyright (c) 2016 Eagle Genomics Ltd, Apache License, Version 2.0.
 ##########################################################
-# package install
 
 package ['zlib-devel', 'tar', 'make', 'unzip'] do
   action :install
 end
 
-##########################################################
-
 include_recipe 'build-essential'
 include_recipe 'TRF'
 include_recipe 'HMMER'
-
-##########################################################
-# here for use by serverspec
-
-magic_shell_environment 'REPEATMASKER_VERSION' do
-  value node['RepeatMasker']['version']
-end
-
-magic_shell_environment 'REPEATMASKER_DIR' do
-  value node['RepeatMasker']['dir']
-end
-
-##########################################################
-# main recipe
 
 remote_file "#{Chef::Config[:file_cache_path]}/#{node['RepeatMasker']['filename']}" do
   source node['RepeatMasker']['url']
@@ -62,6 +45,3 @@ execute 'create symbolic links in PATH to executable' do
   command "ln -s -f #{node['RepeatMasker']['dir']}/RepeatMasker ."
   cwd node['RepeatMasker']['install_dir'] + '/bin'
 end
-
-##########################################################
-##########################################################
