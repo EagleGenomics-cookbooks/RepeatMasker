@@ -1,21 +1,15 @@
----
 driver:
   name: docker
   use_sudo: false
-
 provisioner:
   name: chef_zero
-
 verifier:
   name: inspec
-  format: doc
-  sudo_command: '. /etc/profile;'
-
+  sudo_command: . /etc/profile;
 platforms:
-  - name: centos-6.6
-
+- name: centos-6.6
 suites:
-  - name: default
-    run_list:
-      - recipe[RepeatMasker::default]
-    attributes:
+- name: default
+  run_list:
+  - recipe[RepeatMasker::default]
+  attributes:
